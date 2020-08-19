@@ -8,8 +8,8 @@ searchBtn.addEventListener('click', function () {
 });
 
 function searchBox() {
-  const searchBoxInput = document.getElementById('search-box').value;
-  const songs = searchBoxInput;
+  const searchInput = document.getElementById('search-box').value;
+  const songs = searchInput;
   const apiSearch = `https://api.lyrics.ovh/suggest/${songs}`;
   fetch(apiSearch)
     .then((res) => res.json())
@@ -21,7 +21,7 @@ function searchBox() {
         const artist = song.artist.name;
         const type = song.type;
         
-        
+
         const result = document.getElementById('search-result');
         result.innerHTML += `<div class="single-result row align-items-center my-3 p-3">
                                         <div class="col-md-2">
